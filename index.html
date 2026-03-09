@@ -196,6 +196,36 @@
     .modal-poster img { height: 100%; object-fit: cover; }
     .modal-admin-bar { gap: 6px; }
   }
+ /*Footer styles added afterwards*/
+ /* FOOTER SOCIALS */
+  .footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 16px;
+  }
+  .footer-socials a {
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    transition: all 0.3s cubic-bezier(.22,1,.36,1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(13,13,24,0.6);
+    border: 1px solid rgba(123,47,255,0.15);
+    text-decoration: none;
+  }
+  .footer-socials a:hover {
+    color: #fff;
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(123,47,255,0.4);
+  }
+ /*Footer styles added afterwards*/
 </style>
 </head>
 <body>
@@ -360,8 +390,24 @@
     <p style="font-size:.88rem;">Try a different search or genre.</p>
   </div>
 </main>
-
-<footer>Made with <span>♥</span> by Osaid Ur Rehman &nbsp;·&nbsp; All links are user-submitted</footer>
+<!--Footer-->
+<footer>
+  <div class="footer-socials">
+    <a href="mailto:techosaid@gmail.com" target="_blank" rel="noopener" aria-label="Email">
+      <i class="bi bi-envelope-fill"></i>
+    </a>
+    <a href="https://wa.me/923317583924" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="https://tiktok.com/@animegraze56" target="_blank" rel="noopener" aria-label="TikTok">
+      <i class="bi bi-tiktok"></i>
+    </a>
+    <a href="https://www.instagram.com/osaid_rehman56/" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="bi bi-instagram"></i>
+    </a>
+  </div>
+  Made with <span>♥</span> by Osaid Ur Rehman &nbsp;·&nbsp; All links are user-submitted
+</footer>
 
 <!-- PASSWORD OVERLAY -->
 <div id="password-screen" class="d-none">
