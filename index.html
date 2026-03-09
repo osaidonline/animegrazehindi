@@ -392,6 +392,201 @@
   </div>
 </main>
 <!--Footer-->
+  
+<!--Videos Section-->
+<!-- ═══════════════════════════════════════
+  YOUTUBE VIDEOS SECTION
+  Paste this anywhere in your <body>
+  Replace VIDEO_ID with your YouTube video IDs
+═══════════════════════════════════════ -->
+
+<section id="yt-section" style="margin-top: 56px; padding: 0 0 20px;">
+
+  <!-- Section Header -->
+  <div style="text-align:center; margin-bottom: 32px;">
+    <p style="font-family:'Cinzel Decorative',serif; font-size:0.72rem; letter-spacing:3px; color:#7a7a9a; text-transform:uppercase; margin-bottom:10px;">— Watch —</p>
+    <h2 style="font-family:'Cinzel Decorative',serif; font-size:clamp(1.4rem,3.5vw,2.2rem); background:linear-gradient(135deg,#fff 0%,#00b4d8 50%,#7b2fff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.2;">
+      Featured Videos
+    </h2>
+    <div style="width:80px; height:3px; background:linear-gradient(90deg,#7b2fff,#00b4d8); margin:16px auto 0; border-radius:2px;"></div>
+  </div>
+
+  <!-- Filter Pills -->
+  <div id="yt-filter-bar" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:28px;">
+    <span class="yt-pill active" data-cat="all"     onclick="ytFilter(this,'all')">All</span>
+    <span class="yt-pill"        data-cat="trailer"  onclick="ytFilter(this,'trailer')">Trailers</span>
+    <span class="yt-pill"        data-cat="review"   onclick="ytFilter(this,'review')">Reviews</span>
+    <span class="yt-pill"        data-cat="clip"     onclick="ytFilter(this,'clip')">Clips</span>
+  </div>
+
+  <!-- Video Grid -->
+  <div id="yt-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px;"></div>
+
+</section>
+
+<!-- Lightbox Overlay -->
+<div id="yt-lightbox" onclick="ytCloseLightbox(event)" style="
+  display:none; position:fixed; inset:0;
+  background:rgba(0,0,0,0.92); backdrop-filter:blur(10px);
+  z-index:9990; align-items:center; justify-content:center;
+">
+  <div style="position:relative; width:90%; max-width:900px; aspect-ratio:16/9;">
+    <iframe id="yt-iframe" src="" allowfullscreen
+      style="width:100%; height:100%; border:none; border-radius:16px; box-shadow:0 0 60px rgba(123,47,255,0.4);">
+    </iframe>
+    <button onclick="ytCloseLightbox()" style="
+      position:absolute; top:-16px; right:-16px;
+      width:36px; height:36px; border-radius:50%;
+      background:#e63946; border:none; color:#fff;
+      font-size:1rem; cursor:pointer; display:flex;
+      align-items:center; justify-content:center;
+      box-shadow:0 0 14px rgba(230,57,70,0.5);
+    ">✕</button>
+  </div>
+</div>
+
+<style>
+  /* Pills */
+  .yt-pill {
+    background: #12122a; border: 1px solid #2a2a4a;
+    border-radius: 50px; padding: 5px 18px;
+    font-size: 0.82rem; color: #7a7a9a;
+    cursor: pointer; transition: all .2s;
+    letter-spacing: 0.5px; font-weight: 600;
+    font-family: 'Rajdhani', sans-serif;
+  }
+  .yt-pill:hover { color: #e8e8f0; border-color: rgba(123,47,255,0.4); }
+  .yt-pill.active { background: rgba(123,47,255,0.2); border-color: #7b2fff; color: #7b2fff; box-shadow: 0 0 12px rgba(123,47,255,0.3); }
+
+  /* Cards */
+  .yt-card {
+    background: #0d0d18; border: 1px solid rgba(123,47,255,0.12);
+    border-radius: 14px; overflow: hidden;
+    cursor: pointer; transition: transform .3s cubic-bezier(.22,1,.36,1), border-color .3s, box-shadow .3s;
+  }
+  .yt-card:hover { transform: translateY(-5px); border-color: rgba(123,47,255,0.4); box-shadow: 0 10px 36px rgba(123,47,255,0.2); }
+  .yt-thumb {
+    position: relative; width: 100%; aspect-ratio: 16/9;
+    overflow: hidden; background: #080812;
+  }
+  .yt-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+  .yt-card:hover .yt-thumb img { transform: scale(1.05); }
+  .yt-play-btn {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.35);
+    transition: background .2s;
+  }
+  .yt-card:hover .yt-play-btn { background: rgba(0,0,0,0.15); }
+  .yt-play-btn svg { filter: drop-shadow(0 0 12px rgba(255,0,0,0.7)); transition: transform .2s; }
+  .yt-card:hover .yt-play-btn svg { transform: scale(1.12); }
+  .yt-card-body { padding: 12px 14px 16px; }
+  .yt-badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 1px; padding: 2px 9px; border-radius: 50px;
+    text-transform: uppercase; margin-bottom: 7px;
+  }
+  .yt-badge-trailer { background: rgba(230,57,70,0.15); border: 1px solid rgba(230,57,70,0.3); color: #e63946; }
+  .yt-badge-review  { background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.3); color: #00b4d8; }
+  .yt-badge-clip    { background: rgba(123,47,255,0.15); border: 1px solid rgba(123,47,255,0.3); color: #7b2fff; }
+  .yt-badge-all     { background: rgba(255,214,10,0.1);  border: 1px solid rgba(255,214,10,0.25); color: #ffd60a; }
+  .yt-title { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 0.97rem; color: #e8e8f0; line-height: 1.35; margin-bottom: 4px; }
+  .yt-sub   { font-family: 'Rajdhani', sans-serif; font-size: 0.78rem; color: #7a7a9a; }
+</style>
+
+<script>
+// ═══════════════════════════════════════
+//  ADD YOUR VIDEOS HERE
+// ═══════════════════════════════════════
+const YT_VIDEOS = [
+   {
+    id:       'd_62996jHgg',       // ← YouTube video ID (from the URL: ?v=THIS_PART)
+    title:    'Luz Roja AMV',
+    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    cat:      'Music Video'           // trailer | review | clip
+  },
+  {
+    id:       'F0UGg0TcliA',
+    title:    'Jhol Mix Anime AMV',
+    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    cat:      'Music Video'
+  },
+  {
+    id:       '3dYBziE9-cU',
+    title:    'Royalty Anime Music Video',
+    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    cat:      'Music Video'
+  },
+  {
+    id:       'BgARtcQvLPc',
+    title:    'Best Anime Fights AMV',
+    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    cat:      'Music Video'
+  },
+];
+// ═══════════════════════════════════════
+
+let ytActive = 'all';
+
+function ytRender(cat) {
+  const list = cat === 'all' ? YT_VIDEOS : YT_VIDEOS.filter(v => v.cat === cat);
+  const grid = document.getElementById('yt-grid');
+  if (!list.length) {
+    grid.innerHTML = '<p style="color:#7a7a9a;text-align:center;grid-column:1/-1;padding:40px 0;">No videos in this category.</p>';
+    return;
+  }
+  grid.innerHTML = list.map((v, i) => `
+    <div class="yt-card" onclick="ytOpen('${v.id}')" style="animation:ytFadeUp .4s ease both;animation-delay:${i * 0.07}s">
+      <div class="yt-thumb">
+        <img src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" alt="${v.title}" loading="lazy">
+        <div class="yt-play-btn">
+          <svg width="52" height="52" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="34" cy="34" r="34" fill="rgba(255,0,0,0.85)"/>
+            <polygon points="27,20 53,34 27,48" fill="white"/>
+          </svg>
+        </div>
+      </div>
+      <div class="yt-card-body">
+        <span class="yt-badge yt-badge-${v.cat}">${v.cat}</span>
+        <div class="yt-title">${v.title}</div>
+        <div class="yt-sub">${v.subtitle}</div>
+      </div>
+    </div>`).join('');
+}
+
+function ytFilter(el, cat) {
+  ytActive = cat;
+  document.querySelectorAll('.yt-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  ytRender(cat);
+}
+
+function ytOpen(id) {
+  document.getElementById('yt-iframe').src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0`;
+  const lb = document.getElementById('yt-lightbox');
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function ytCloseLightbox(e) {
+  if (e && e.target !== document.getElementById('yt-lightbox') && e.target.tagName !== 'BUTTON') return;
+  document.getElementById('yt-iframe').src = '';
+  document.getElementById('yt-lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') ytCloseLightbox(); });
+
+// Init
+document.addEventListener('DOMContentLoaded', () => ytRender('all'));
+</script>
+
+<!-- Inline keyframe (safe to add if not already in your CSS) -->
+<style>
+  @keyframes ytFadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+</style>
+
+<!--Videos Section-->
 <footer>
   <div class="footer-socials">
     <a href="mailto:techosaid@gmail.com" target="_blank" rel="noopener" aria-label="Email">
@@ -1094,3 +1289,4 @@ function handleRequest(e) {
 </body>
 
 </html>
+
