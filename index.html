@@ -8,12 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='%237b2fff' d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z'/></svg>" type="image/svg+xml">
-  <!-- ═══════════════════════════════════════
-  SOCIAL MEDIA PREVIEW (Open Graph)
-  Paste inside your <head> tag
-═══════════════════════════════════════ -->
 
-<!-- Basic -->
 <meta property="og:title"       content="AnimeGraze Episode Links">
 <meta property="og:description" content="Stream, Download & Share anime episodes — All in One Place">
 <meta property="og:image"       content="https://i.ibb.co/Wvv93pjV/AVv-Xs-Eh-ZJEQhq-Pg-N-f-Jcx-JZPi226-Jm8-GRs-Af-GFF29-Xx-S2s9i4-UVtod-JFLBIbc7b46u-Ihjzg-DUjhuk-Oft-Nj-Bd.png">
@@ -21,7 +16,6 @@
 <meta property="og:type"        content="website">
 <meta property="og:site_name"   content="AnimeGraze">
 
-<!-- WhatsApp & Telegram use og: tags above, no extra code needed -->
 <style>
   :root {
     --bg-deep:       #050508;
@@ -97,6 +91,14 @@
   .skeleton-line { height: 11px; border-radius: 6px; background: linear-gradient(90deg, #0d0d18 25%, #1a1a30 50%, #0d0d18 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; margin-bottom: 8px; }
   @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+
+  /* Custom 5-column grid for desktop */
+  @media (min-width: 992px) {
+    .col-lg-custom-5 {
+      flex: 0 0 20% !important;
+      max-width: 20% !important;
+    }
+  }
 
   /* MODALS */
   .modal-content { background: var(--bg-modal); border: 1px solid rgba(123,47,255,0.3); border-radius: 20px; color: var(--text-main); }
@@ -211,7 +213,6 @@
     .modal-poster img { height: 100%; object-fit: cover; }
     .modal-admin-bar { gap: 6px; }
   }
- /*Footer styles added afterwards*/
  /* FOOTER SOCIALS */
   .footer-socials {
     display: flex;
@@ -240,11 +241,9 @@
     transform: translateY(-4px);
     box-shadow: 0 6px 16px rgba(123,47,255,0.4);
   }
- /*Footer styles added afterwards*/
 </style>
 </head>
 <body>
-<!-- WhatsApp Floating Button -->
 <a href="https://wa.me/923317583924" target="_blank" rel="noopener"
    style="
     position: fixed;
@@ -268,9 +267,7 @@
     <path d="M16 2C8.28 2 2 8.28 2 16c0 2.46.66 4.89 1.92 7.03L2 30l7.18-1.88A13.94 13.94 0 0 0 16 30c7.72 0 14-6.28 14-14S23.72 2 16 2zm0 25.5a11.44 11.44 0 0 1-5.84-1.6l-.42-.25-4.26 1.12 1.13-4.15-.27-.44A11.5 11.5 0 1 1 16 27.5zm6.29-8.61c-.34-.17-2.02-.99-2.33-1.1-.31-.12-.54-.17-.77.17-.23.34-.88 1.1-1.08 1.33-.2.22-.4.25-.74.08-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.02-1.9-2.36-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.12-.23.06-.43-.02-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59h-.65c-.23 0-.6.08-.91.4-.31.33-1.19 1.16-1.19 2.83s1.22 3.28 1.39 3.51c.17.23 2.4 3.66 5.81 5.13.81.35 1.44.56 1.93.72.81.26 1.55.22 2.14.13.65-.1 2.02-.83 2.3-1.62.28-.8.28-1.48.2-1.62-.09-.14-.31-.23-.65-.4z"/>
   </svg>
 </a>
-<!--Whatsapp-->
 
-<!-- TikTok Follow Popup -->
 <div id="tt-popup" style="
   position: fixed;
   bottom: 20px;
@@ -287,7 +284,6 @@
   animation: ttSlideIn 0.4s cubic-bezier(.22,1,.36,1) both;
   max-width: 240px;
 ">
-  <!-- TikTok Icon -->
   <div style="
     width: 44px; height: 44px; flex-shrink: 0;
     background: #000;
@@ -299,7 +295,6 @@
     </svg>
   </div>
 
-  <!-- Text -->
   <div style="flex:1; min-width:0;">
     <div style="color:#fff; font-size:0.82rem; font-weight:700; white-space:nowrap;">Follow on TikTok</div>
     <a href="https://tiktok.com/@animegraze56" target="_blank" rel="noopener"
@@ -308,7 +303,6 @@
     </a>
   </div>
 
-  <!-- Follow Button -->
   <a href="https://tiktok.com/@animegraze56" target="_blank" rel="noopener" style="
     background: linear-gradient(135deg, #fe2c55, #ff6b81);
     color: #fff;
@@ -324,7 +318,6 @@
     Follow
   </a>
 
-  <!-- Close X -->
   <button onclick="document.getElementById('tt-popup').style.display='none'" style="
     position: absolute;
     top: 6px; right: 8px;
@@ -361,12 +354,8 @@
   });
 </script>
 
-<!--Tiktok FOllow-->
-
-<!-- TOAST -->
 <div class="toast-custom" id="toast"><i id="toast-icon"></i><span id="toast-msg"></span></div>
 
-<!-- NAVBAR -->
 <nav class="navbar-custom">
   <div class="container d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center">
@@ -384,7 +373,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero container">
   <h1>Anime<br>Graze Hindi</h1>
   <p>Stream, Download &amp; Share — All in One Place</p>
@@ -396,7 +384,6 @@
   <div class="genre-bar" id="genre-bar"><span class="genre-pill active" data-genre="All">All</span></div>
 </section>
 
-<!-- GRID -->
 <main class="container pb-5" style="margin-top:38px;">
   <p class="section-label" id="results-label">— Loading —</p>
   <div class="row g-3 g-md-4" id="anime-grid"></div>
@@ -405,18 +392,9 @@
     <p style="font-size:.88rem;">Try a different search or genre.</p>
   </div>
 </main>
-<!--Footer-->
-  
-<!--Videos Section-->
-<!-- ═══════════════════════════════════════
-  YOUTUBE VIDEOS SECTION
-  Paste this anywhere in your <body>
-  Replace VIDEO_ID with your YouTube video IDs
-═══════════════════════════════════════ -->
 
 <section id="yt-section" class="container" style="margin-top: 56px; padding: 0 0 20px;">
 
-  <!-- Section Header -->
   <div style="text-align:center; margin-bottom: 32px;">
     <p style="font-family:'Cinzel Decorative',serif; font-size:0.72rem; letter-spacing:3px; color:#7a7a9a; text-transform:uppercase; margin-bottom:10px;">— Watch —</p>
     <h2 style="font-family:'Cinzel Decorative',serif; font-size:clamp(1.4rem,3.5vw,2.2rem); background:linear-gradient(135deg,#fff 0%,#00b4d8 50%,#7b2fff 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1.2;">
@@ -425,7 +403,6 @@
     <div style="width:80px; height:3px; background:linear-gradient(90deg,#7b2fff,#00b4d8); margin:16px auto 0; border-radius:2px;"></div>
   </div>
 
-  <!-- Filter Pills -->
   <div id="yt-filter-bar" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center; margin-bottom:28px;">
     <span class="yt-pill active" data-cat="all"     onclick="ytFilter(this,'all')">All</span>
     <span class="yt-pill"        data-cat="trailer"  onclick="ytFilter(this,'trailer')">Trailers</span>
@@ -433,12 +410,10 @@
     <span class="yt-pill"        data-cat="clip"     onclick="ytFilter(this,'clip')">Clips</span>
   </div>
 
-  <!-- Video Grid -->
   <div id="yt-grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:20px;"></div>
 
 </section>
 
-<!-- Lightbox Overlay -->
 <div id="yt-lightbox" onclick="ytCloseLightbox(event)" style="
   display:none; position:fixed; inset:0;
   background:rgba(0,0,0,0.92); backdrop-filter:blur(10px);
@@ -509,36 +484,32 @@
 </style>
 
 <script>
-// ═══════════════════════════════════════
-//  ADD YOUR VIDEOS HERE
-// ═══════════════════════════════════════
 const YT_VIDEOS = [
    {
-    id:       'd_62996jHgg',       // ← YouTube video ID (from the URL: ?v=THIS_PART)
+    id:       'd_62996jHgg',
     title:    'Luz Roja AMV',
-    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
-    cat:      'Music Video'           // trailer | review | clip
+    subtitle: 'Anime Music Video · 3 min',
+    cat:      'Music Video'
   },
   {
     id:       'F0UGg0TcliA',
     title:    'Jhol Mix Anime AMV',
-    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    subtitle: 'Anime Music Video · 3 min',
     cat:      'Music Video'
   },
   {
     id:       '3dYBziE9-cU',
     title:    'Royalty Anime Music Video',
-    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    subtitle: 'Anime Music Video · 3 min',
     cat:      'Music Video'
   },
   {
     id:       'BgARtcQvLPc',
     title:    'Best Anime Fights AMV',
-    subtitle: 'Anime Music Video · 3 min', // Optional extra info (e.g. category, duration)
+    subtitle: 'Anime Music Video · 3 min',
     cat:      'Music Video'
   },
 ];
-// ═══════════════════════════════════════
 
 let ytActive = 'all';
 
@@ -590,19 +561,14 @@ function ytCloseLightbox(e) {
 }
 
 document.addEventListener('keydown', e => { if (e.key === 'Escape') ytCloseLightbox(); });
-
-// Init
 document.addEventListener('DOMContentLoaded', () => ytRender('all'));
 </script>
 
-<!-- Inline keyframe (safe to add if not already in your CSS) -->
 <style>
   @keyframes ytFadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
 </style>
 
-<!--Videos Section-->
 <footer>
- 
   <div class="footer-socials">
     <a href="mailto:techosaid@gmail.com" target="_blank" rel="noopener" aria-label="Email">
       <i class="bi bi-envelope-fill"></i>
@@ -620,7 +586,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
   Made with <span>♥</span> by Osaid Ur Rehman &nbsp;·&nbsp; All links are user-submitted
 </footer>
 
-<!-- PASSWORD OVERLAY -->
 <div id="password-screen" class="d-none">
   <h2>Admin Access</h2>
   <input type="password" class="form-control-custom" id="pw-input" placeholder="Enter password" maxlength="60">
@@ -631,7 +596,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
   <p class="pw-err-msg d-none" id="pw-err">❌ Wrong password. Try again.</p>
 </div>
 
-<!-- ADD ANIME MODAL -->
 <div class="modal fade" id="addAnimeModal" tabindex="-1">
   <div class="modal-dialog modal-md modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -655,7 +619,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
   </div>
 </div>
 
-<!-- EPISODE MODAL -->
 <div class="modal fade" id="episodeModal" tabindex="-1">
   <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
@@ -665,7 +628,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
       </div>
       <div class="modal-body">
 
-        <!-- Info row -->
         <div class="modal-info">
           <div id="modal-poster-wrap"></div>
           <div class="modal-details">
@@ -675,7 +637,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
           </div>
         </div>
 
-        <!-- Admin bar -->
         <div class="modal-admin-bar d-none" id="modal-admin-bar">
           <span class="admin-label"><i class="bi bi-shield-fill-check me-1"></i>Admin Controls</span>
           <button class="btn-outline-cyan" id="btn-toggle-edit-info"><i class="bi bi-pencil me-1"></i>Edit Info</button>
@@ -683,7 +644,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
           <button class="btn-danger-sm" id="btn-delete-anime"><i class="bi bi-trash me-1"></i>Delete</button>
         </div>
 
-        <!-- EDIT INFO PANEL -->
         <div class="edit-info-panel d-none" id="edit-info-panel">
           <h6><i class="bi bi-pencil-square me-2"></i>Edit Anime Info</h6>
           <div class="row g-2 mb-2">
@@ -705,7 +665,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
           </div>
         </div>
 
-        <!-- ADD EPISODES PANEL -->
         <div class="add-ep-panel d-none" id="add-ep-panel">
           <h6><i class="bi bi-collection-play me-2"></i>Add Episode Links</h6>
           <div class="ep-rows-scroll" id="ep-rows-container">
@@ -717,7 +676,6 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
           </div>
         </div>
 
-        <!-- EPISODES GRID -->
         <div class="ep-section-title" style="margin-top:18px;">Episodes</div>
         <div class="modal-ep-scroll">
           <div id="ep-grid-wrap"></div>
@@ -733,27 +691,17 @@ document.addEventListener('DOMContentLoaded', () => ytRender('all'));
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// ══════════════════════════════════
-//  CONFIG
-// ══════════════════════════════════
 const GAS_URL        = 'https://script.google.com/macros/s/AKfycbyt2Sg1h9zrRNnhtDu6ya3KTDxwg2k3ClEuKgcZI78yZUbg2I1AS61wSMTIyu3vV0-q/exec';
-const ADMIN_PASSWORD = 'osaid1221'; // ← change this
+const ADMIN_PASSWORD = 'osaid1221';
 
-// ══════════════════════════════════
-//  STATE
-// ══════════════════════════════════
 let allAnime      = [];
 let filteredAnime = [];
 let activeGenre   = 'All';
 let adminUnlocked = false;
 let currentIdx    = null;
 let epRows        = [];
-
 let epModal, addAnimeModal;
 
-// ══════════════════════════════════
-//  TOAST
-// ══════════════════════════════════
 function showToast(msg, type = 'success') {
   const t = document.getElementById('toast');
   document.getElementById('toast-msg').textContent = msg;
@@ -765,9 +713,6 @@ function showToast(msg, type = 'success') {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ══════════════════════════════════
-//  API
-// ══════════════════════════════════
 async function apiCall(action, payload = {}) {
   const body = JSON.stringify({ action, ...payload });
   const url  = GAS_URL + '?payload=' + encodeURIComponent(body);
@@ -785,9 +730,6 @@ async function apiCall(action, payload = {}) {
   }
 }
 
-// ══════════════════════════════════
-//  LOAD DATA
-// ══════════════════════════════════
 async function loadData(silent = false) {
   if (!silent) showSkeletons();
   try {
@@ -803,8 +745,8 @@ async function loadData(silent = false) {
 
 function showSkeletons() {
   document.getElementById('anime-grid').innerHTML =
-    Array.from({length:12}).map(() => `
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+    Array.from({length:10}).map(() => `
+      <div class="col-6 col-sm-4 col-md-3 col-lg-custom-5">
         <div class="skeleton-card">
           <div class="skeleton-thumb"></div>
           <div class="skeleton-body">
@@ -815,9 +757,6 @@ function showSkeletons() {
       </div>`).join('');
 }
 
-// ══════════════════════════════════
-//  GENRE BAR
-// ══════════════════════════════════
 function buildGenreBar() {
   const genres = new Set(['All']);
   allAnime.forEach(a => (a.genre||'').split(',').map(g=>g.trim()).filter(Boolean).forEach(g=>genres.add(g)));
@@ -835,9 +774,6 @@ function buildGenreBar() {
   );
 }
 
-// ══════════════════════════════════
-//  FILTER + RENDER
-// ══════════════════════════════════
 function applyFilters() {
   const q = document.getElementById('search-input').value.trim().toLowerCase();
   filteredAnime = allAnime.filter(a => {
@@ -859,7 +795,7 @@ function renderGrid() {
     const epc    = (a.episodes||[]).length;
     const genres = (a.genre||'').split(',').map(g=>g.trim()).filter(Boolean);
     return `
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+    <div class="col-6 col-sm-4 col-md-3 col-lg-custom-5">
       <div class="anime-card" onclick="openEpisodeModal(${allAnime.indexOf(a)})"
            style="animation:fadeUp .4s ease both;animation-delay:${i*.04}s">
         ${a.cover?`<img class="card-thumb" src="${esc(a.cover)}" alt="${esc(a.title)}" loading="lazy"
@@ -879,34 +815,23 @@ function renderGrid() {
   }).join('');
 }
 
-// ══════════════════════════════════
-//  EPISODE MODAL — OPEN
-// ══════════════════════════════════
 function openEpisodeModal(idx) {
   currentIdx = idx;
   const a    = allAnime[idx];
-
   document.getElementById('modal-anime-title').textContent  = a.title;
   document.getElementById('modal-title-detail').textContent = a.title;
   document.getElementById('modal-desc').textContent         = a.description || 'No description available.';
-
   const pw = document.getElementById('modal-poster-wrap');
   pw.innerHTML = a.cover
     ? `<div class="modal-poster"><img src="${esc(a.cover)}" alt="${esc(a.title)}"></div>`
     : `<div class="modal-poster-placeholder">${a.emoji||'🎬'}</div>`;
-
   const genres = (a.genre||'').split(',').map(g=>g.trim()).filter(Boolean);
   document.getElementById('modal-chips').innerHTML =
     genres.map(g=>`<span class="detail-chip chip-genre">${esc(g)}</span>`).join('') +
     (a.status?`<span class="detail-chip chip-status">${esc(a.status)}</span>`:'') +
     (a.year  ?`<span class="detail-chip chip-year">${esc(String(a.year))}</span>`:'');
-
-  // admin bar
   document.getElementById('modal-admin-bar').classList.toggle('d-none', !adminUnlocked);
-
-  // reset all panels
   closePanels();
-
   refreshEpGrid(a);
   epModal.show();
 }
@@ -920,21 +845,13 @@ function closePanels() {
   renderEpRowsUI();
 }
 
-// ══════════════════════════════════
-//  EPISODE GRID RENDER
-// ══════════════════════════════════
 function refreshEpGrid(a) {
   const wrap  = document.getElementById('ep-grid-wrap');
   const noMsg = document.getElementById('no-ep-msg');
   const eps   = (a.episodes||[]).slice().sort((x,y)=>Number(x.num)-Number(y.num));
-
-  if (!eps.length) {
-    wrap.innerHTML = ''; noMsg.classList.remove('d-none'); return;
-  }
+  if (!eps.length) { wrap.innerHTML = ''; noMsg.classList.remove('d-none'); return; }
   noMsg.classList.add('d-none');
-
   if (adminUnlocked) {
-    // Admin view: episode boxes with delete X button
     wrap.innerHTML = `<div class="ep-grid-admin">${
       eps.map(ep => `
         <div class="ep-box-admin">
@@ -948,7 +865,6 @@ function refreshEpGrid(a) {
         </div>`).join('')
     }</div>`;
   } else {
-    // Visitor view: clean download boxes
     wrap.innerHTML = `<div class="ep-grid">${
       eps.map(ep => `
         <a class="ep-box" href="${esc(ep.link)}" target="_blank" rel="noopener">
@@ -959,14 +875,10 @@ function refreshEpGrid(a) {
   }
 }
 
-// ══════════════════════════════════
-//  DELETE SINGLE EPISODE
-// ══════════════════════════════════
 async function deleteEpisode(epNum) {
   if (currentIdx === null) return;
   const a = allAnime[currentIdx];
   if (!confirm(`Delete Episode ${epNum} from "${a.title}"?`)) return;
-
   try {
     const res = await apiCall('deleteEpisode', { animeId: a.id, epNum });
     if (res.success) {
@@ -977,24 +889,16 @@ async function deleteEpisode(epNum) {
   } catch(e) { showToast('Network error', 'error'); }
 }
 
-// ══════════════════════════════════
-//  EDIT INFO PANEL
-// ══════════════════════════════════
 document.getElementById('btn-toggle-edit-info').addEventListener('click', () => {
   const panel  = document.getElementById('edit-info-panel');
   const hidden = panel.classList.contains('d-none');
-
-  // close other panel
   document.getElementById('add-ep-panel').classList.add('d-none');
   document.getElementById('btn-toggle-add-ep').innerHTML = '<i class="bi bi-plus me-1"></i>Add Episodes';
-
   panel.classList.toggle('d-none');
   document.getElementById('btn-toggle-edit-info').innerHTML = hidden
     ? '<i class="bi bi-chevron-up me-1"></i>Close'
     : '<i class="bi bi-pencil me-1"></i>Edit Info';
-
   if (hidden) {
-    // Pre-fill fields with current values
     const a = allAnime[currentIdx];
     document.getElementById('ei-title').value  = a.title       || '';
     document.getElementById('ei-desc').value   = a.description || '';
@@ -1015,10 +919,8 @@ document.getElementById('btn-save-edit-info').addEventListener('click', async ()
   if (currentIdx === null) return;
   const title = document.getElementById('ei-title').value.trim();
   if (!title) { showToast('Title cannot be empty.', 'error'); return; }
-
   const btn = document.getElementById('btn-save-edit-info');
   btn.innerHTML = '<i class="bi bi-hourglass-split me-1"></i>Saving...'; btn.disabled = true;
-
   try {
     const res = await apiCall('editAnime', {
       animeId:     allAnime[currentIdx].id,
@@ -1033,7 +935,6 @@ document.getElementById('btn-save-edit-info').addEventListener('click', async ()
     if (res.success) {
       showToast('Info updated!', 'success');
       await loadData(true);
-      // Refresh modal header + info with updated data
       const updated = allAnime[currentIdx];
       document.getElementById('modal-anime-title').textContent  = updated.title;
       document.getElementById('modal-title-detail').textContent = updated.title;
@@ -1051,26 +952,18 @@ document.getElementById('btn-save-edit-info').addEventListener('click', async ()
       document.getElementById('btn-toggle-edit-info').innerHTML = '<i class="bi bi-pencil me-1"></i>Edit Info';
     } else { showToast(res.error||'Failed', 'error'); }
   } catch(e) { showToast('Network error', 'error'); }
-
   btn.innerHTML = '<i class="bi bi-check-lg me-1"></i>Save Changes'; btn.disabled = false;
 });
 
-// ══════════════════════════════════
-//  ADD EPISODES PANEL
-// ══════════════════════════════════
 document.getElementById('btn-toggle-add-ep').addEventListener('click', () => {
   const panel  = document.getElementById('add-ep-panel');
   const hidden = panel.classList.contains('d-none');
-
-  // close other panel
   document.getElementById('edit-info-panel').classList.add('d-none');
   document.getElementById('btn-toggle-edit-info').innerHTML = '<i class="bi bi-pencil me-1"></i>Edit Info';
-
   panel.classList.toggle('d-none');
   document.getElementById('btn-toggle-add-ep').innerHTML = hidden
     ? '<i class="bi bi-chevron-up me-1"></i>Close Panel'
     : '<i class="bi bi-plus me-1"></i>Add Episodes';
-
   if (hidden && !epRows.length) {
     const a = allAnime[currentIdx];
     epRows.push({ num: (a.episodes||[]).length + 1, link: '' });
@@ -1106,14 +999,10 @@ document.getElementById('btn-save-ep-rows').addEventListener('click', async () =
   if (currentIdx === null) return;
   const valid = epRows.filter(r => r.num && r.link.trim());
   if (!valid.length) { showToast('Add at least one episode with a link.', 'error'); return; }
-
   const btn = document.getElementById('btn-save-ep-rows');
   btn.innerHTML = '<i class="bi bi-hourglass-split me-1"></i>Saving...'; btn.disabled = true;
-
   try {
-    const res = await apiCall('addEpisodes', {
-      animeId: allAnime[currentIdx].id, episodes: valid
-    });
+    const res = await apiCall('addEpisodes', { animeId: allAnime[currentIdx].id, episodes: valid });
     if (res.success) {
       showToast(`${valid.length} episode(s) saved!`, 'success');
       epRows = [];
@@ -1124,13 +1013,9 @@ document.getElementById('btn-save-ep-rows').addEventListener('click', async () =
       document.getElementById('btn-toggle-add-ep').innerHTML = '<i class="bi bi-plus me-1"></i>Add Episodes';
     } else { showToast(res.error||'Failed', 'error'); }
   } catch(e) { showToast('Network error', 'error'); }
-
   btn.innerHTML = '<i class="bi bi-save me-1"></i>Save Episodes'; btn.disabled = false;
 });
 
-// ══════════════════════════════════
-//  DELETE ANIME
-// ══════════════════════════════════
 document.getElementById('btn-delete-anime').addEventListener('click', async () => {
   if (currentIdx === null) return;
   const a = allAnime[currentIdx];
@@ -1144,9 +1029,6 @@ document.getElementById('btn-delete-anime').addEventListener('click', async () =
   } catch(e) { showToast('Network error', 'error'); }
 });
 
-// ══════════════════════════════════
-//  ADD ANIME MODAL
-// ══════════════════════════════════
 function openAddAnimeModal() {
   ['a-title','a-desc','a-genre','a-year','a-status','a-cover','a-emoji'].forEach(id =>
     document.getElementById(id).value = '');
@@ -1176,9 +1058,6 @@ document.getElementById('btn-save-anime').addEventListener('click', async () => 
   btn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Save Anime'; btn.disabled = false;
 });
 
-// ══════════════════════════════════
-//  AUTH
-// ══════════════════════════════════
 function showPasswordScreen() {
   document.getElementById('password-screen').classList.remove('d-none');
   document.getElementById('pw-err').classList.add('d-none');
@@ -1194,8 +1073,6 @@ function checkPassword() {
   if (document.getElementById('pw-input').value === ADMIN_PASSWORD) {
     adminUnlocked = true;
     document.getElementById('password-screen').classList.add('d-none');
-    document.getElementById('pw-input').value = '';
-    document.getElementById('pw-err').classList.add('d-none');
     document.getElementById('btn-admin-login').classList.add('d-none');
     document.getElementById('nav-logged-in').classList.remove('d-none');
     showToast('Welcome, Admin! 🛡', 'success');
@@ -1214,99 +1091,14 @@ function logoutAdmin() {
   showToast('Logged out.', 'info');
 }
 
-// ══════════════════════════════════
-//  HELPERS
-// ══════════════════════════════════
-function esc(str) {
-  const d = document.createElement('div'); d.textContent = str||''; return d.innerHTML;
-}
+function esc(str) { const d = document.createElement('div'); d.textContent = str||''; return d.innerHTML; }
 document.getElementById('search-input').addEventListener('input', applyFilters);
 
-// ══════════════════════════════════
-//  INIT
-// ══════════════════════════════════
 document.addEventListener('DOMContentLoaded', () => {
   epModal       = new bootstrap.Modal(document.getElementById('episodeModal'));
   addAnimeModal = new bootstrap.Modal(document.getElementById('addAnimeModal'));
   loadData();
 });
 </script>
-
-<!-- ══════════════════════════════════════════════════════════════════
-  GOOGLE APPS SCRIPT — Replace ALL your existing code with this
-
-function doPost(e) { return handleRequest(e); }
-function doGet(e)  { return handleRequest(e); }
-
-function handleRequest(e) {
-  const out = ContentService.createTextOutput().setMimeType(ContentService.MimeType.JSON);
-  try {
-    let data = {};
-    if (e.parameter && e.parameter.payload) data = JSON.parse(decodeURIComponent(e.parameter.payload));
-    else if (e.postData && e.postData.contents) data = JSON.parse(e.postData.contents);
-
-    const ss     = SpreadsheetApp.getActiveSpreadsheet();
-    const aSheet = ss.getSheetByName('Anime')    || (() => { const s=ss.insertSheet('Anime');    s.appendRow(['id','title','description','genre','year','status','cover','emoji']); return s; })();
-    const eSheet = ss.getSheetByName('Episodes') || (() => { const s=ss.insertSheet('Episodes'); s.appendRow(['animeId','num','link']); return s; })();
-
-    if (data.action === 'getAll') {
-      const aR=aSheet.getDataRange().getValues(), eR=eSheet.getDataRange().getValues();
-      const aH=aR[0], eH=eR[0];
-      const anime=aR.slice(1).map(r=>{ const o={}; aH.forEach((h,i)=>o[h]=r[i]); o.episodes=[]; return o; });
-      eR.slice(1).forEach(r=>{ const ep={}; eH.forEach((h,i)=>ep[h]=r[i]); const a=anime.find(x=>String(x.id)===String(ep.animeId)); if(a) a.episodes.push({num:ep.num,link:ep.link}); });
-      out.setContent(JSON.stringify({anime}));
-
-    } else if (data.action === 'addAnime') {
-      const id=Utilities.getUuid();
-      aSheet.appendRow([id,data.title,data.description,data.genre,data.year,data.status,data.cover,data.emoji]);
-      out.setContent(JSON.stringify({success:true,id}));
-
-    } else if (data.action === 'editAnime') {
-      const aData=aSheet.getDataRange().getValues(), aH=aData[0];
-      const idIdx=aH.indexOf('id');
-      for (let i=1;i<aData.length;i++) {
-        if (String(aData[i][idIdx])===String(data.animeId)) {
-          const row=i+1;
-          const fields=['title','description','genre','year','status','cover','emoji'];
-          fields.forEach(f=>{ const col=aH.indexOf(f); if(col>=0) aSheet.getRange(row,col+1).setValue(data[f]||''); });
-          break;
-        }
-      }
-      out.setContent(JSON.stringify({success:true}));
-
-    } else if (data.action === 'addEpisodes') {
-      data.episodes.forEach(ep=>eSheet.appendRow([data.animeId,ep.num,ep.link]));
-      out.setContent(JSON.stringify({success:true}));
-
-    } else if (data.action === 'deleteEpisode') {
-      const eData=eSheet.getDataRange().getValues();
-      for (let i=eData.length-1;i>=1;i--) {
-        if (String(eData[i][0])===String(data.animeId) && Number(eData[i][1])===Number(data.epNum)) {
-          eSheet.deleteRow(i+1); break;
-        }
-      }
-      out.setContent(JSON.stringify({success:true}));
-
-    } else if (data.action === 'deleteAnime') {
-      const aData=aSheet.getDataRange().getValues();
-      for(let i=aData.length-1;i>=1;i--) if(String(aData[i][0])===String(data.animeId)){aSheet.deleteRow(i+1);break;}
-      const eData=eSheet.getDataRange().getValues();
-      for(let i=eData.length-1;i>=1;i--) if(String(eData[i][0])===String(data.animeId)) eSheet.deleteRow(i+1);
-      out.setContent(JSON.stringify({success:true}));
-
-    } else { out.setContent(JSON.stringify({error:'Unknown action: '+data.action})); }
-
-  } catch(err) { out.setContent(JSON.stringify({error:err.message})); }
-  return out;
-}
-
-══════════════════════════════════════════════════════════════════ -->
 </body>
-
 </html>
-
-
-
-
-
-
